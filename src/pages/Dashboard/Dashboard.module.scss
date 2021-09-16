@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  min-height: 200vh;
+
+  .sidebar {
+    flex: 240;
+  }
+
+  .main {
+    flex: 1280;
+  }
+}
