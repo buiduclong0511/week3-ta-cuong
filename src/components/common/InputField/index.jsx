@@ -4,6 +4,7 @@ export const InputField = ({
   placeholder = "",
   type = "text",
   value = "",
+  name = "",
   onChange = () => {},
 }) => {
   return (
@@ -13,6 +14,7 @@ export const InputField = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        name={name}
       />
     </div>
   );

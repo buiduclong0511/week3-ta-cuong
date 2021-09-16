@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  background-color: #fff;
+
+  table {
+    width: 100%;
+
+    tr {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+
+      th,
+      td {
+        border-bottom: 1px solid #000;
+      }
+    }
+  }
+}
