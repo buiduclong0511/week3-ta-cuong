@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-import { Sidebar } from "../../components";
+import { Header, Sidebar } from "../../components";
 import styles from "./Dashboard.module.scss";
 
 export const Dashboard = () => {
@@ -27,7 +27,9 @@ export const Dashboard = () => {
       <div className={styles.sidebar}>
         <Sidebar sidebarModel={sidebarModel} />
       </div>
-      <div className={styles.main}>main</div>
+      <div className={styles.main}>
+        <Header />
+      </div>
     </div>
   );
 };
