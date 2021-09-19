@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
+import { toast } from "react-toastify";
 
 import { InputField, Button } from "../../components";
 import { PASSWORD, USERNAME } from "../../constants";
@@ -38,9 +39,10 @@ export const Login = () => {
       .post("/login", loginValue)
       .then((res) => {
         window.localStorage.setItem("userInfo", JSON.stringify(res.data.data));
+        toast.success("Login successfully!");
         history.push(PATH_DASHBOARD);
       })
-      .catch((err) => console.log(err.response));
+      .catch((err) => toast.error(err.response.data.message));
     // console.log(loginValue);
   };
 
