@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
 
@@ -30,9 +31,17 @@ export const Login = () => {
   };
 
   const handleLogin = () => {
-    if (loginValue.username === USERNAME && loginValue.password === PASSWORD) {
-      history.push(PATH_DASHBOARD);
-    }
+    // if (loginValue.username === USERNAME && loginValue.password === PASSWORD) {
+    //   history.push(PATH_DASHBOARD);
+    // }
+    axios
+      .post("/login", loginValue)
+      .then((res) => {
+        window.localStorage.setItem("userInfo", JSON.stringify(res.data.data));
+        history.push(PATH_DASHBOARD);
+      })
+      .catch((err) => console.log(err.response));
+    // console.log(loginValue);
   };
 
   return (
